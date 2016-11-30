@@ -4,56 +4,151 @@ public class TrabalhoComputador {
 
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner(System.in);
-		String[] memoria = new String[256];
+		int var[] = { 0, 0, 0, 0, 0, 0 };
+		// uc = 0;
+		// ula = 1;
+		// a = 2;
+		// b = 3;
+		// pc = 4;
+		// ir = 5;
+
+		int[] memoriaint = new int[256];
+
 		for (int i = 0; i < 256; i++)
-			memoria[i] = "_";
+			memoriaint[i] = 9999;
 		int i = 0;
-		while (true) {
+		while (i < 256) {
 			System.out.printf("Digite %dª instrução ou 9999 para parar: ", i + 1);
-			String v = teclado.nextLine();
-			if (v.equals("9999"))
+			int v = teclado.nextInt();
+			if (v == 9999)
 				break;
-			else
-				memoria[i] = v;
+			else {
+				memoriaint[i] = v;
+
+			}
 			i++;
 		}
-		fill(memoria, '_');
-		System.out.printf(
-				" _______________                                 ____MEMÓRIA____\n"
-						+ "| _____________ |                             10|______%s_____|\n"
-						+ "||      UC     ||                             0F|______%s_____|\n"
-						+ "||_____________||                             0E|______%s_____|\n"
-						+ "| _|___     |   |                             0D|______%s_____|\n"
-						+ "||_ULA_|    |   |                             0C|______%s_____|\n"
-						+ "| _|________|__ |                             0B|______%s_____|\n"
-						+ "||      A      ||                             0A|______%s_____|\n"
-						+ "||_____________||                             09|______%s_____|\n"
-						+ "||      B      ||                             08|______%s_____|\n"
-						+ "||_____________||                             07|______%s_____|       ______VIDEO______\n"
-						+ "||      PC     ||                             06|______%s_____|      | _______________ |\n"
-						+ "||_____________||                             05|______%s_____|      ||               ||\n"
-						+ "||      IR     ||                             04|______%s_____|      ||               ||\n"
-						+ "||_____________||                             03|______%s_____|      ||               ||\n"
-						+ "||    FLAGS    ||                             02|______%s_____|      ||               ||\n"
-						+ "||_____________||                             01|______%s_____|      ||_______________||\n"
-						+ "|_______________|                             00|_______________|      |_________________|\n"
-						+ "|   |   |   |                                     |   |   |               |   |   |\n"
-						+ "|   |   |   |                                     |   |   |               |   |   |\n"
-						+ "|   |   |   |_____________________________________|___|___|_______________|___|___|______Dados:\n"
-						+ "|   |   |_____________________________________________|___|___________________|___|______Endereço:\n"
-						+ "|   |_____________________________________________________|_______________________|______Read=0\n"
-						+ "|________________________________________________________________________________________Memória=0\n",
-				memoria[15], memoria[14], memoria[13], memoria[12], memoria[11], memoria[10], memoria[9], memoria[8],
-				memoria[7], memoria[6], memoria[5], memoria[4], memoria[3], memoria[2], memoria[1], memoria[0]);
-		teclado.close();
+
+		for (;;) {
+
+			System.out.print("Pressione ENTER para continuar");
+			String h = teclado.nextLine();
+
+			switch (memoriaint[var[5]]) {
+			case 0:
+				inst00(var, memoriaint);
+				break;
+			}
+
+		}
+
 	}
 
-	public static String[] fill(String[] s, char fill) {
+	public static String[] fill(String[] s, char fill, int qntd) {
 		for (int i = 0; i < s.length; i++) {
-			while (s[i].length() < 4) {
+			while (s[i].length() < qntd) {
 				s[i] += fill;
 			}
 		}
 		return s;
 	}
+
+	public static int[] inst00(int var[], int memoria[]){
+		var[5]++;
+		var[2] = memoria[var[5]];
+		return var;
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void printFigura(int memoriaint[], int v, String tela[], String ulathela[]) {
+		if (v > 238)
+			v = 238;
+		
+		String memoria[] = new String[256];
+		for(int i = 0 ; i<256 ; i++){
+			if (memoriaint[i] != 9999){
+			memoria[i] = Integer.toString(memoriaint[i]);
+			}else{
+				memoria[i]="_";
+			}
+		}
+		
+		String[] tela = { "UC", "ULA",   "A", "B", "PC", "IR", "FLAGS", "DADOS", "END", "READ", "MEMORIA", "  " }; 
+		
+		
+		fill(memoria, '_', 9);
+		fill(tela, ' ', 6);
+		fill(ulatela, '_', 6);
+		
+		
+		String endMem[] = { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "0A", "0B", "0C", "0D", "0E",
+				"0F", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "1A", "1B", "1C", "1D", "1E", "1F",
+				"20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "2A", "2B", "2C", "2D", "2E", "2F", "30",
+				"31", "32", "33", "34", "35", "36", "37", "38", "39", "3A", "3B", "3C", "3D", "3E", "3F", "40", "41",
+				"42", "43", "44", "45", "46", "47", "48", "49", "4A", "4B", "4C", "4D", "4E", "4F", "50", "51", "52",
+				"53", "54", "55", "56", "57", "58", "59", "5A", "5B", "5C", "5D", "5E", "5F", "60", "61", "62", "63",
+				"64", "65", "66", "67", "68", "69", "6A", "6B", "6C", "6D", "6E", "6F", "70", "71", "72", "73", "74",
+				"75", "76", "77", "78", "79", "7A", "7B", "7C", "7D", "7E", "7F", "80", "81", "82", "83", "84", "85",
+				"86", "87", "88", "89", "8A", "8B", "8C", "8D", "8E", "8F", "90", "91", "92", "93", "94", "95", "96",
+				"97", "98", "99", "9A", "9B", "9C", "9D", "9E", "9F", "A0", "A1", "A2", "A3", "A4", "A5", "A6", "A7",
+				"A8", "A9", "AA", "AB", "AC", "AD", "AE", "AF", "B0", "B1", "B2", "B3", "B4", "B5", "B6", "B7", "B8",
+				"B9", "BA", "BB", "BC", "BD", "BE", "BF", "C0", "C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9",
+				"CA", "CB", "CC", "CD", "CE", "CF", "D0", "D1", "D2", "D3", "D4", "D5", "D6", "D7", "D8", "D9", "DA",
+				"DB", "DC", "DE", "DF", "E0", "E1", "E2", "E3", "E4", "E5", "E6", "E7", "E8", "E9", "EA", "EB", "EC",
+				"ED", "EE", "EF", "F0", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "FA", "FB", "FC", "FD",
+				"FE", "FF" }; 
+
+		System.out.printf(
+				" ___________________                            ____MEMÓRIA____\n"
+						+ "| _________________ |                        %s|______%s|\n"
+						+ "||      %s     ||                        %s|______%s|\n"
+						+ "||_________________||                        %s|______%s|\n"
+						+ "| ___|_____     |   |                        %s|______%s|\n"
+						+ "||__%s_|    |   |                        %s|______%s|\n"
+						+ "| _|____________|__ |                        %s|______%s|\n"
+						+ "||      %s     ||                        %s|______%s|\n"
+						+ "||_________________||                        %s|______%s|\n"
+						+ "||      %s     ||                        %s|______%s|\n"
+						+ "||_________________||                        %s|______%s|       ______VIDEO______\n"
+						+ "||      %s     ||                        %s|______%s|      | _______________ |\n"
+						+ "||_________________||                        %s|______%s|      ||               ||\n"
+						+ "||      %s     ||                        %s|______%s|      ||               ||\n"
+						+ "||_________________||                        %s|______%s|      ||    %s     ||\n"
+						+ "||    %s       ||                        %s|______%s|      ||               ||\n"
+						+ "||_________________||                        %s|______%s|      ||_______________||\n"
+						+ "|___________________|                        %s|______%s|      |_________________|\n"
+						+ "|    |    |    |                                |   |   |               |   |   |\n"
+						+ "|    |    |    |                                |   |   |               |   |   |\n"
+						+ "|    |    |    |________________________________|___|___|_______________|___|___|______Dados:%s \n"
+						+ "|    |    |_________________________________________|___|___________________|___|______Endereço:%s \n"
+						+ "|    |__________________________________________________|_______________________|______Read=%s \n"
+						+ "|______________________________________________________________________________________Memória=%s \n",
+				endMem[v + 16], memoria[v + 16], tela[0], endMem[v + 15], memoria[v + 15], endMem[v + 14],
+				memoria[v + 14], endMem[v + 13], memoria[v + 13], ulatela[0], endMem[v + 12], memoria[v + 12],
+				endMem[v + 11], memoria[v + 11], tela[1], endMem[v + 10], memoria[v + 10], endMem[v + 9],
+				memoria[v + 9], tela[2], endMem[v + 8], memoria[v + 8], endMem[v + 7], memoria[v + 7], tela[3],
+				endMem[v + 6], memoria[v + 6], endMem[v + 5], memoria[v + 5], tela[4], endMem[v + 4], memoria[v + 4],
+				endMem[v + 3], memoria[v + 3], tela[10], tela[5], endMem[v + 2], memoria[v + 2], endMem[v + 1],
+				memoria[v + 1], endMem[v], memoria[v], tela[6], tela[7], tela[8], tela[9]);
+	}
+}
 }
