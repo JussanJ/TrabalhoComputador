@@ -1,14 +1,13 @@
 
 public class Dados {
 	Print fg = new Print();
-	private int var[] = { 0, 0, 0, 0, 0, 0 };
 	private int[] memoria = new int[256];
-	private int uc = var[0];
-	private int ula = var[1];
-	private int a = var[2];
-	private int b = var[3];
-	private int pc = var[4];
-	private int ir = var[5];
+	private int uc = 0;
+	private int ula = 0;
+	private int a = 0;
+	private int b = 0;
+	private int pc = 0;
+	private int ir = 0;
 
 	public void setDADOS(int i){
 		fg.setDADOS(i);
@@ -79,9 +78,6 @@ public class Dados {
 		fg.setIr(ir);
 	}
 
-	public int[] getVar() {
-		return var;
-	}
 
 	public int getMemoria(int i) {
 		return memoria[i];

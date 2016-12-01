@@ -24,7 +24,8 @@ public class TrabalhoComputador {
 
 		dd.Tela();
 
-		while (true) {
+		boolean programa = true;
+		while (programa) {
 
 			pause();
 
@@ -51,11 +52,15 @@ public class TrabalhoComputador {
 			case 3:
 				dd.setB(dd.getA());
 				break;
+			default:
+				programa = false;
+				break;
 			}
 
 			dd.Tela();
 
 		}
+		System.out.println("Programa encerrado.");
 
 	}
 
