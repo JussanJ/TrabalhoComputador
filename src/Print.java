@@ -1,12 +1,12 @@
 
 public class Print {
-	private String uc = "UC    ";
-	private String ula = "ULA___";
-	private String a = "A     ";
-	private String b = "B     ";
-	private String pc = "PC    ";
+	private String uc = "      ";
+	private String ula = "______";
+	private String a = "      ";
+	private String b = "      ";
+	private String pc = "      ";
 	private int pcint;
-	private String ir = "IR    ";
+	private String ir = "      ";
 	private String DADOS = "      ";
 	private String ENDEREÇO = " ";
 	private String VIDEO = "      ";
@@ -109,20 +109,20 @@ public class Print {
 		System.out.printf(
 				" ___________________                            ____MEMÓRIA____\n"
 						+ "| _________________ |                        %s|_______%s|\n"
-						+ "||      %s     ||                        %s|_______%s|\n"
+						+ "||   UC=%s     ||                        %s|_______%s|\n"
 						+ "||_________________||                        %s|_______%s|\n"
-						+ "| ___|_____     |   |                        %s|_______%s|\n"
-						+ "||__%s_|    |   |                        %s|_______%s|\n"
+						+ "| ___|______    |   |                        %s|_______%s|\n"
+						+ "||ULA=%s|   |   |                        %s|_______%s|\n"
 						+ "| _|____________|__ |                        %s|_______%s|\n"
-						+ "||      %s     ||                        %s|_______%s|\n"
+						+ "||   A=%s      ||                        %s|_______%s|\n"
 						+ "||_________________||                        %s|_______%s|\n"
-						+ "||      %s     ||                        %s|_______%s|\n"
+						+ "||   B=%s      ||                        %s|_______%s|\n"
 						+ "||_________________||                        %s|_______%s|       ______VIDEO______\n"
-						+ "||      %s     ||                        %s|_______%s|      | _______________ |\n"
+						+ "||   PC=%s     ||                        %s|_______%s|      | _______________ |\n"
 						+ "||_________________||                        %s|_______%s|      ||               ||\n"
-						+ "||      %s     ||                        %s|_______%s|      ||               ||\n"
+						+ "||   IR=%s     ||                        %s|_______%s|      ||               ||\n"
 						+ "||_________________||                        %s|_______%s|      ||    %s     ||\n"
-						+ "||    %s       ||                        %s|_______%s|      ||               ||\n"
+						+ "||   %s        ||                        %s|_______%s|      ||               ||\n"
 						+ "||_________________||                        %s|_______%s|      ||_______________||\n"
 						+ "|___________________|                        %s|_______%s|      |_________________|\n"
 						+ "|    |    |    |                                |   |   |               |   |   |\n"
