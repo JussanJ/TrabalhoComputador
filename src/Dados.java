@@ -9,21 +9,22 @@ public class Dados {
 	private int pc = 0;
 	private int ir = 0;
 
-	public void setDADOS(int i){
+	public void setDADOS(int i) {
 		fg.setDADOS(i);
 	}
-	
-	public void setENDEREÇO(int i){
+
+	public void setENDEREÇO(int i) {
 		fg.setENDEREÇO(i);
 	}
-	
-	public void setREAD(int i ){
+
+	public void setREAD(int i) {
 		fg.setREAD(i);
 	}
-	public void setMEMORIA(int i){
+
+	public void setMEMORIA(int i) {
 		fg.setMEMORIA(i);
 	}
-	
+
 	public int getUc() {
 		return uc;
 	}
@@ -67,7 +68,7 @@ public class Dados {
 	public void setPc(int pc) {
 		this.pc = pc;
 		fg.setPc(pc);
-		}
+	}
 
 	public int getIr() {
 		return ir;
@@ -78,7 +79,6 @@ public class Dados {
 		fg.setIr(ir);
 	}
 
-
 	public int getMemoria(int i) {
 		return memoria[i];
 	}
@@ -87,12 +87,13 @@ public class Dados {
 		this.memoria[i] = memoria;
 		fg.setMemoria(memoria, i);
 	}
-	public void Tela(){
+
+	public void Tela() {
 		fg.figura();
 	}
-	
-	public void PCinc(){
-		this.setPc(this.getPc()+1);
+
+	public void PCinc() {
+		this.setPc(this.getPc() + 1);
 	}
-	
+
 }

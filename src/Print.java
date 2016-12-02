@@ -36,75 +36,60 @@ public class Print {
 
 		return s;
 	}
-	
-	public Print(){
-		for(int i = 0; i<256; i++){
-		memoria[i]="________";}
+
+	public Print() {
+		for (int i = 0; i < 256; i++) {
+			memoria[i] = "________";
+		}
 	}
-
-	
-
-	
 
 	public void setDADOS(int dADOS) {
 		DADOS = Integer.toString(dADOS);
 	}
 
-	
-
 	public void setENDEREÇO(int eNDEREÇO) {
 		ENDEREÇO = Integer.toString(eNDEREÇO);
 	}
 
-	
-
 	public void setREAD(int rEAD) {
 		READ = Integer.toString(rEAD);
 	}
-
-	
 
 	public void setMEMORIA(int mEMORIA) {
 		MEMORIA = Integer.toString(mEMORIA);
 	}
 
 	public void setUc(int uc) {
-		this.uc = 
-		fill(Integer.toString(uc), ' ' , 6);
+		this.uc = fill(Integer.toString(uc), ' ', 6);
 	}
 
 	public void setUla(int ula) {
-		this.ula = 
-		fill(Integer.toString(ula), '_' , 6);
+		this.ula = fill(Integer.toString(ula), '_', 6);
 	}
 
 	public void setA(int a) {
-		this.a = 
-		fill(Integer.toString(a), ' ' , 6);
+		this.a = fill(Integer.toString(a), ' ', 6);
 	}
 
 	public void setB(int b) {
-		this.b = 
-		fill(Integer.toString(b), ' ' , 6);
+		this.b = fill(Integer.toString(b), ' ', 6);
 	}
 
 	public void setPc(int pc) {
 		this.pcint = pc;
-		this.pc = 
-		fill(Integer.toString(pc), ' ' , 6);
+		this.pc = fill(Integer.toString(pc), ' ', 6);
 	}
 
 	public void setIr(int ir) {
-		this.ir = 
-		fill(Integer.toString(ir), ' ' , 6);
+		this.ir = fill(Integer.toString(ir), ' ', 6);
 	}
 
 	public void setMemoria(int memoria, int i) {
-		this.memoria[i] = fill(Integer.toString(memoria) , '_' , 8);
-		
+		this.memoria[i] = fill(Integer.toString(memoria), '_', 8);
+
 	}
 
-	public void figura(){
+	public void figura() {
 		int v = pcint;
 		System.out.printf(
 				" ___________________                            ____MEMÓRIA____\n"
@@ -131,12 +116,11 @@ public class Print {
 						+ "|    |    |_________________________________________|___|___________________|___|______Endereço:%s \n"
 						+ "|    |__________________________________________________|_______________________|______Read=%s \n"
 						+ "|______________________________________________________________________________________Memória=%s \n",
-				endMem[v + 16], memoria[v + 16], uc, endMem[v + 15], memoria[v + 15], endMem[v + 14],
-				memoria[v + 14], endMem[v + 13], memoria[v + 13], ula, endMem[v + 12], memoria[v + 12],
-				endMem[v + 11], memoria[v + 11], a, endMem[v + 10], memoria[v + 10], endMem[v + 9],
-				memoria[v + 9], b, endMem[v + 8], memoria[v + 8], endMem[v + 7], memoria[v + 7], pc,
-				endMem[v + 6], memoria[v + 6], endMem[v + 5], memoria[v + 5], ir, endMem[v + 4], memoria[v + 4],
-				endMem[v + 3], memoria[v + 3], VIDEO, "FLAGS ", endMem[v + 2], memoria[v + 2], endMem[v + 1],
-				memoria[v + 1], endMem[v], memoria[v], DADOS, ENDEREÇO, READ, MEMORIA);
+				endMem[v + 16], memoria[v + 16], uc, endMem[v + 15], memoria[v + 15], endMem[v + 14], memoria[v + 14],
+				endMem[v + 13], memoria[v + 13], ula, endMem[v + 12], memoria[v + 12], endMem[v + 11], memoria[v + 11],
+				a, endMem[v + 10], memoria[v + 10], endMem[v + 9], memoria[v + 9], b, endMem[v + 8], memoria[v + 8],
+				endMem[v + 7], memoria[v + 7], pc, endMem[v + 6], memoria[v + 6], endMem[v + 5], memoria[v + 5], ir,
+				endMem[v + 4], memoria[v + 4], endMem[v + 3], memoria[v + 3], VIDEO, "FLAGS ", endMem[v + 2],
+				memoria[v + 2], endMem[v + 1], memoria[v + 1], endMem[v], memoria[v], DADOS, ENDEREÇO, READ, MEMORIA);
 	}
-	}
+}
