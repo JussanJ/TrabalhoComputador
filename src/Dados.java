@@ -8,6 +8,12 @@ public class Dados {
 	private int b = 0;
 	private int pc = 0;
 	private int ir = 0;
+	
+	
+	
+	public void setVIDEO(int vIDEO){
+		fg.setVIDEO(vIDEO);
+	}
 
 	public void setDADOS(int i) {
 		fg.setDADOS(i);

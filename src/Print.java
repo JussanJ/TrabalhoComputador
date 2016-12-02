@@ -4,7 +4,7 @@ public class Print {
 	private String ula = "______";
 	private String a = "      ";
 	private String b = "      ";
-	private String pc = "      ";
+	private String pc = "0     ";
 	private int pcint;
 	private String ir = "      ";
 	private String DADOS = "      ";
@@ -43,6 +43,12 @@ public class Print {
 		}
 	}
 
+	public void setVIDEO(int vIDEO){
+		VIDEO = fill(String.valueOf((char) vIDEO), ' ', 6);
+		
+		
+	
+	}
 	public void setDADOS(int dADOS) {
 		DADOS = Integer.toString(dADOS);
 	}
@@ -91,6 +97,10 @@ public class Print {
 
 	public void figura() {
 		int v = pcint;
+		if(v>238)
+			v=238
+			;
+		
 		System.out.printf(
 				" ___________________                            ____MEMÓRIA____\n"
 						+ "| _________________ |                        %s|_______%s|\n"

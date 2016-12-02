@@ -17,6 +17,7 @@ public class TrabalhoComputador {
 				break;
 			else {
 				dd.setMemoria(v, i);
+			
 
 			}
 			i++;
@@ -24,12 +25,15 @@ public class TrabalhoComputador {
 
 		dd.Tela();
 
-		boolean programa = true;
-		while (programa) {
+		while (dd.getPc() < i) {
 
 			pause();
 
+			dd.setENDEREÇO(0);
+			dd.setREAD(0);
+			dd.setMEMORIA(0);
 			dd.setIr(dd.getMemoria(dd.getPc()));
+			dd.setDADOS(0);
 			dd.PCinc();
 			dd.Tela();
 
@@ -39,12 +43,20 @@ public class TrabalhoComputador {
 			case 0:
 
 				dd.setA(dd.getMemoria(dd.getPc()));
+				dd.setDADOS(dd.getMemoria(dd.getPc()));
+
 				dd.PCinc();
+				dd.setREAD(1);
+
 				break;
 			case 1:
 
 				dd.setB(dd.getMemoria(dd.getPc()));
+				dd.setDADOS(dd.getMemoria(dd.getPc()));
+
 				dd.PCinc();
+				dd.setREAD(1);
+
 				break;
 			case 2:
 				dd.setA(dd.getB());
@@ -52,8 +64,68 @@ public class TrabalhoComputador {
 			case 3:
 				dd.setB(dd.getA());
 				break;
+			case 4:
+				break;
+			case 5:
+				
+				if (dd.getMemoria(dd.getPc()) == 1) {
+					dd.setVIDEO(dd.getA());
+					dd.setENDEREÇO(dd.getMemoria(dd.getPc()));
+					dd.setMEMORIA(1);
+				} else
+					System.out.println("ENDEREÇO INVALIDO");
+				dd.PCinc();
+				break;
+			case 20:
+				dd.setA(dd.getA() - dd.getMemoria(dd.getPc()));
+				dd.setREAD(1);
+				dd.setDADOS(dd.getMemoria(dd.getPc()));
+
+				break;
+			case 21:
+				dd.setA(dd.getA() + dd.getMemoria(dd.getPc()));
+				dd.setREAD(1);
+				dd.setDADOS(dd.getMemoria(dd.getPc()));
+
+				break;
+			case 22:
+				dd.setA(dd.getA() * dd.getMemoria(dd.getPc()));
+				dd.setREAD(1);
+				dd.setDADOS(dd.getMemoria(dd.getPc()));
+
+				break;
+			case 23:
+				dd.setA(dd.getA() / dd.getMemoria(dd.getPc()));
+				dd.setREAD(1);
+				dd.setDADOS(dd.getMemoria(dd.getPc()));
+
+				break;
+			case 24:
+				dd.setA(dd.getA() - dd.getB());
+				dd.setREAD(1);
+				dd.setDADOS(dd.getMemoria(dd.getPc()));
+
+				break;
+			case 25:
+				dd.setA(dd.getA() + dd.getB());
+				dd.setREAD(1);
+				dd.setDADOS(dd.getMemoria(dd.getPc()));
+
+				break;
+			case 26:
+				dd.setA(dd.getA() * dd.getB());
+				dd.setREAD(1);
+				dd.setDADOS(dd.getMemoria(dd.getPc()));
+
+				break;
+			case 27:
+				dd.setA(dd.getA() / dd.getB());
+				dd.setREAD(1);
+				dd.setDADOS(dd.getMemoria(dd.getPc()));
+
+				break;
 			default:
-				programa = false;
+
 				break;
 			}
 
