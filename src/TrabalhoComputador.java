@@ -65,7 +65,17 @@ public class TrabalhoComputador {
 				dd.setB(dd.getA());
 				break;
 			case 4:
-				break;
+				if (dd.getMemoria(dd.getPc()) == 1) {
+					if(dd.getVIDEO()!=9999){
+					dd.setA(dd.getVIDEO());
+					dd.setENDEREÇO(dd.getMemoria(dd.getPc()));
+					dd.setMEMORIA(1);} else
+						System.out.println("VIDEO VAZIO");
+				} else
+					System.out.println("ENDEREÇO INVALIDO");
+				dd.PCinc();
+				break;				
+				
 			case 5:
 				
 				if (dd.getMemoria(dd.getPc()) == 1) {

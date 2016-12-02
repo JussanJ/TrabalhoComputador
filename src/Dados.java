@@ -8,10 +8,14 @@ public class Dados {
 	private int b = 0;
 	private int pc = 0;
 	private int ir = 0;
+	private int VIDEO=9999;
 	
-	
+	public int getVIDEO(){
+		return VIDEO;
+	}
 	
 	public void setVIDEO(int vIDEO){
+		this.VIDEO = vIDEO;
 		fg.setVIDEO(vIDEO);
 	}
 
